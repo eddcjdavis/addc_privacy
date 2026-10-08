@@ -1,0 +1,46 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>ADDC SAR Location Service</title>
+  <meta name="description" content="How the ADDC SAR App uses its foreground location service to record helicopter flight paths.">
+  <link rel="icon" href="logo.png">
+  <link rel="stylesheet" href="style.css">
+  <style>
+    video { display: block; width: 100%; max-width: 360px; margin: 24px auto; border-radius: 16px; border: 1px solid var(--border); background: #000; }
+  </style>
+</head>
+<body>
+  <header class="site">
+    <div class="inner">
+      <img src="logo.png" alt="">
+      <a class="name" href="./">ADDC SAR App</a>
+      <nav><a href="guide.html">User guide</a><a href="privacy.html">Privacy</a></nav>
+    </div>
+  </header>
+  <main>
+    <h1>Foreground location service</h1>
+    <p class="lede">How the Android app uses the FOREGROUND_SERVICE_LOCATION permission.</p>
+
+    <video controls playsinline preload="metadata" poster="location-service-poster.jpg">
+      <source src="location-service.mp4" type="video/mp4">
+      Your browser can't play this video. <a href="location-service.mp4">Download it</a> instead.
+    </video>
+
+    <h2>What the video shows</h2>
+    <ol>
+      <li>A crew member on board an ADDC search and rescue helicopter opens a checkpoint map in the app.</li>
+      <li>They log the helicopter's take-off. This starts a foreground service of type <code>location</code>. A "Tracking" banner appears in the app.</li>
+      <li>They put the phone away. The service keeps recording the phone's position about every 10 seconds, and an ongoing notification ("Tracking SAR 2 · Recording the flight path until you log the landing") shows it's running.</li>
+      <li>Back in the app, the banner shows the flight is still being tracked.</li>
+      <li>They log the landing. The service stops, and the notification disappears.</li>
+    </ol>
+
+    <h2>Why the app needs it</h2>
+    <p>The recorded route is used to show the helicopter's live position to the rest of the search and rescue team, and to work out the distance actually flown in the flight log. Crews can't keep the app open on screen while flying, so the position has to be recorded with the app in the background. The service runs only between a take-off and a landing logged on that phone. Location is never recorded in the background at any other time.</p>
+    <p>The video uses demonstration data. See the <a href="privacy.html#location">privacy policy</a> for how location data is handled.</p>
+  </main>
+  <footer>ADDC SAR App, created by Edd Davis. <a href="mailto:eddcjdavis@gmail.com">eddcjdavis@gmail.com</a></footer>
+</body>
+</html>

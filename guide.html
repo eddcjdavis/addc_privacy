@@ -77,7 +77,11 @@
     <p>Every map can show a day's rally route as a blue line. Choose the day from the map's route control. The app remembers your choice on this device until you change it.</p>
 
     <h2 id="bearings">4. Quick Bearings</h2>
-    <p>Checkpoints grouped by day, plus <strong>Misc</strong> and <strong>Alarms</strong>. Tap a checkpoint to open it on a map with its distance and bearing from where you are. Anyone logged in can add, edit and delete checkpoints by entering a name, latitude and longitude.</p>
+    <p>Checkpoints grouped by rally day (Day 1 to Day 5). Tap a checkpoint to open it on a map with its distance and bearing from where you are. Anyone logged in can add, edit and delete checkpoints by entering a name, latitude and longitude, or by picking the spot on a map.</p>
+    <ul>
+      <li><strong>Every-day places:</strong> for places used every day, such as hospitals or home base, turn on <strong>Misc - every day</strong> when adding the checkpoint. It then appears under every day, marked "Every day" with a pin, so it only needs entering once. Turning it off moves the checkpoint to the day you're viewing.</li>
+      <li><strong>Alarms:</strong> add an alarm as a checkpoint on the day it happens. Helicopters can then log their flights to it from that day's list.</li>
+    </ul>
 
     <h2 id="flights">5. Logging flights</h2>
     <p>Log helicopter take-offs and landings from a Quick Bearings checkpoint map:</p>
@@ -93,6 +97,8 @@
     </div>
 
     <p>Logging a landing from another phone also works. The take-off phone stops recording the next time it reaches the server.</p>
+    <p>If the app is closed or the phone restarts mid-flight, recording carries on when the app is opened again.</p>
+    <p>A helicopter can only have one flight open at a time, so if two phones log the same take-off, the second gets "already flying - log its landing first". The same goes for landings: the second phone gets "has already landed", and the first landing stands.</p>
 
     <h3>Flight Log</h3>
     <p>Pick a day to see each helicopter's flights, with wheels-up and wheels-down times and the distance flown in nautical miles. From there you can:</p>
@@ -137,11 +143,11 @@
       <li>Each callsign can have one deployment per day.</li>
       <li>The pilot and co-pilot must be different people.</li>
       <li>Wheels up can't be before leaving the bivi.</li>
-      <li>Add staff to the team from the people not already on a deployment that day.</li>
+      <li>Add staff to the team from the people not already on a deployment that day. Someone can only be on one deployment per day.</li>
     </ul>
 
     <h2 id="team">11. Meet The Team</h2>
-    <p>Profiles with a photo, role and "about me". Tap someone to see their full profile.</p>
+    <p>Profiles with a photo, role and "about me". Tap someone to see their full profile. Photos are saved on your phone the first time they load, so the list opens quickly after that and a photo only downloads again when it changes.</p>
     <ul>
       <li>If you logged in with your own PIN, you can edit your own profile: change your photo, role, about me or PIN.</li>
       <li>Admins can add, edit and delete anyone's profile, and set or generate their PIN.</li>
@@ -163,7 +169,7 @@
         <tr><th>Ambulances</th><td>The ambulances for National Ambulance</td></tr>
       </tbody>
     </table>
-    <p>Names must be unique in each list.</p>
+    <p>Names must be unique in each list. Deleting a staff member also takes them off any deployments they're on.</p>
 
     <h2 id="tips">14. Tips and troubleshooting</h2>
     <table>
@@ -175,6 +181,8 @@
         <tr><td>No take-off/landing notifications</td><td>Turn on notifications for the app in your phone's settings. The web version doesn't get notifications.</td></tr>
         <tr><td>A helicopter is missing from flights or Live Locations</td><td>An admin needs to mark its callsign as a helicopter under Callsigns.</td></tr>
         <tr><td>A route day is greyed out</td><td>It's locked until an admin releases it.</td></tr>
+        <tr><td>"Already flying" or "has already landed"</td><td>Another phone already logged that take-off or landing. Check the Flight Log, and log the landing if the helicopter is down.</td></tr>
+        <tr><td>"This report has been deleted"</td><td>Someone else deleted that ATMIST while you were editing it. Go back and add it again if it's still needed.</td></tr>
         <tr><td>Keypad says "Too many attempts"</td><td>Wait for the countdown to finish before trying again.</td></tr>
       </tbody>
     </table>
